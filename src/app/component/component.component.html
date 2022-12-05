@@ -1,7 +1,9 @@
 <p>component works!</p>
 
 <ul>
-    <li *ngFor ="let personas of persona"> 
-        Alumno: {{ persona }}
+    <li [ngClass]="persona.apellido.length>10 ? 'color1' :'color2'" *ngFor="let persona of personas">
+        Alumno: {{ persona.nombre +' '+ persona.apellido | miPipe : persona.apellido}}
     </li>
 </ul>
+
+<!-- [ngClass]="persona.apellido.length>10 ? persona.apellido.toUpperCase() : persona.apellido.toLowerCase()" -->
